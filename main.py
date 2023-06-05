@@ -9,7 +9,7 @@ if __name__ == '__main__':
     app_id = os.getenv("APP_ID")
     app_secret = os.getenv("APP_SECRET")
     template_id = os.getenv("TEMPLATE_ID")
-    weather_key = os.getenv("WEATHER_API_KEY")
+#     weather_key = os.getenv("WEATHER_API_KEY")
 
     client = WeChatClient(app_id, app_secret)
     wm = WeChatMessage(client)
@@ -27,7 +27,7 @@ if __name__ == '__main__':
         name = user_info['user_name'].upper()
 
 
-        wea_city,weather = get_weather(city,weather_key)
+#         wea_city,weather = get_weather(city,weather_key)
         data = dict()
         data['time'] = {
             'value': get_time(),
@@ -41,18 +41,18 @@ if __name__ == '__main__':
             'value': weather['text_day'],
             'color': '#002fa4'
         }
-        data['city'] = {
-            'value': wea_city,
-            'color': get_random_color()
-        }
-        data['tem_high'] = {
-            'value': weather['high'],
-            'color': '#D44848'
-        }
-        data['tem_low'] = {
-            'value': weather['low'],
-            'color': '#01847F'
-        }
+#         data['city'] = {
+#             'value': wea_city,
+#             'color': get_random_color()
+#         }
+#         data['tem_high'] = {
+#             'value': weather['high'],
+#             'color': '#D44848'
+#         }
+#         data['tem_low'] = {
+#             'value': weather['low'],
+#             'color': '#01847F'
+#         }
         data['born_days'] = {
             'value': get_count(born_date),
             'color': get_random_color()
@@ -61,10 +61,10 @@ if __name__ == '__main__':
             'value': get_birthday(birthday),
             'color': get_random_color()
         }
-        data['wind'] = {
-            'value': weather['wind_direction'],
-            'color': get_random_color()
-        }
+#         data['wind'] = {
+#             'value': weather['wind_direction'],
+#             'color': get_random_color()
+#         }
         data['name'] = {
             'value': name,
             'color': get_random_color()
